@@ -1,0 +1,44 @@
+header {
+	background-color: skyblue;
+	height: px;
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+h1 {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: xxx-large;
+	align-content: center;
+}
+
+nav {
+	background-color: skyblue;
+	display: flex;
+	justify-content: space-around;
+}
+
+.sun {
+    background-color: yellow;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.sceneGrass {
+    background-color: greenyellow;
+    height: 400px;
+    text-align: center;
+}
+
+body {
+	background-color: greenyellow;
+}
+
+footer {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    text-align: center;
+}
