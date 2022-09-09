@@ -13,12 +13,30 @@
 		<h1>Spaceman</h1>
 	</header>
 	<body>
-		<div class="sun"></div>
-        <div class="sun"></div>
-        <div class="sun"></div>
-		<div class="spaceship">
-			<div>This Area Displays Where Ship is Built</div>
+		<div class="sun">Sun</div>
+		<div class="spaceship">Spaceship</div>
+
+		<div class="inputArea">
+			<div>
+				<label for="guessLetter">Guess Letter Here</label>
+			</div>
+			<div>
+				<input
+					type="text"
+					id="inputBox"
+					name="gLtr"
+					maxlength="1"
+					minlength="1"
+					title="Only Letters"
+					placeholder="Capitol Letters Only"
+					pattern="(?=.*[A-Z]).{1,}"
+				/>
+			</div>
+			<div>
+				<input type="submit" />
+			</div>
 		</div>
+
 		<div class="hiddenword">
 			<h2>This Area Displays Hidden Word</h2>
 		</div>
@@ -36,8 +54,14 @@
 			<p>This Area Displays Status</p>
 		</div>
 		<div class="selectedLetters">
-			<h3>This Area Displays Selected Letters</h3>
+			<h3>This Area Displays Keyboard</h3>
+			<div class="keyboard">
+				<button ></button>
+			</div>
 		</div>
+
+            
+		</form>
 	</body>
 	<footer>
 		<p>&copy; Zac Marcengill 2022</p>

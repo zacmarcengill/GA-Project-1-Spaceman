@@ -12,33 +12,52 @@ h1 {
 	align-content: center;
 }
 
-nav {
-	background-color: skyblue;
+.sun {
+	background-color: yellow;
+	height: 100px;
+	width: 100px;
+	border: 1px solid;
+	border-radius: 100px;
+	margin: 50px 0px 0px 50px;
 	display: flex;
-	justify-content: space-around;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 
-.sun {
-    background-color: yellow;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    justify-content: space-between;
-
+.spaceship {
+	background-color: silver;
+	border-radius: 100px;
+	width: 200px;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
 }
 
 .sceneGrass {
-    background-color: greenyellow;
-    height: 400px;
-    text-align: center;
+	background-color: greenyellow;
+	height: 400px;
+	text-align: center;
+}
+
+.inputArea {
+	background-color: skyblue;
+	text-align: center;
+	margin: auto;
 }
 
 body {
-	background-color: greenyellow;
+	background-color: skyblue;
 }
 
 footer {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: medium;
-    text-align: center;
+	background-color: gray;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: medium;
+	text-align: center;
+}
+
+input {
+	text-align: center;
 }
