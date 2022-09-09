@@ -29,44 +29,82 @@ const alphabetLtrs = [
 	'Z',
 ];
 
-const wordArr = ['mountain', 'river', 'evergreen', 'trout', 'campervan'];
-
-// const wordArr = [
-//     {
-//         word: 'mountain',
-//         hint: 'climb the ********',
-//     },
-//     {
-//         word: 'river',
-//         hint: 'water running between mountains'
-//     },
-//     {
-//         word: 'evergreen',
-//         hint: 'tree that stays green year-round'
-//     },
-//     {   word: 'trout',
-//         hint: 'fish that lives in cold rivers'
-//     },
-//     {   word: 'campervan',
-//         hint: '#vanlife'
-//     }];
+const wordArr = [
+	{
+		word: 'mountain',
+		hint: 'climb the ********',
+	},
+	{
+		word: 'river',
+		hint: 'water running between mountains',
+	},
+	{
+		word: 'evergreen',
+		hint: 'tree that stays green year-round',
+	},
+	{ word: 'trout', hint: 'fish that lives in cold rivers' },
+	{ word: 'campervan', hint: '#vanlife' },
+];
 
 const userInput = document.querySelector('.input-boxes');
 const playAgainBtn = document.querySelector('.play-again-button');
+const hint = document.querySelector('.hint');
+const alphaBtnInput = document.querySelector('.button');
+const typingInput = document.querySelector('.typing-input');
 
 function randWordGenerater() {
-	let randWord = wordArr[Math.floor(Math.random() * wordArr.length)];
-	console.log(randWord);
+	//select random word and hint from array
+	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
 
+	//new variable for random word selected
+	let word = randWordHint.word;
+
+	// console.log("Print > Word: " + randWordHint.word + ' - Hint: ' + randWordHint.hint);
+
+	//
 	let changeHTML = '';
-	for (let i = 0; i < randWord.length; i++) {
+	for (let i = 0; i < word.length; i++) {
 		changeHTML += `<input type="text" disabled>`;
 	}
 	userInput.innerHTML = changeHTML;
+	//creates hint below hidden word
+	hint.innerText = 'Hint: ' + randWordHint.hint;
 }
 randWordGenerater();
 
+function initGame(e) {
+	let key = e.target.value;
+	console.log(key);
+}
+
 playAgainBtn.addEventListener('click', randWordGenerater);
+typingInput.addEventListener('input', initGame);
+document.addEventListener('keydonw', () => typingInput.focus());
+
+let button = document.getElementsByClassName('.button');
+
+function guessLetter() {
+	let button = document.getElementsByClassName('.button');
+	button.addEventListener('click', keyClick);
+	////event listener that returns button letter (innerHTML) for clicked alphabet buttons
+}
+
+function evaluateHiddenWord() {
+	////checks the hidden word for guessed letters
+	let hiddenWordLetters = `<input type="text" disabled>`;
+}
+
+// function guessLetters() {
+// 	let guess = document.querySelectorAll('.button');
+//     let userInput = document.querySelectorAll('.input-boxes');
+
+//     if (userInput === guess) {
+//         console.log("correct")
+//     } else {
+//         console.log("wrong")
+//     }
+// }
+// guessLetters(A)
 
 /*----- app's state (variables) -----*/
 
