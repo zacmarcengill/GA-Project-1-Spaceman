@@ -71,3 +71,19 @@ input {
 	flex-wrap: wrap;
 	align-items: center;
 }
+
+.hidden-word-container .input-boxes {
+	background-color: white;
+	line-height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.input input{
+	height: 50px;
+	width: 50px;
+	padding: 10px;
+	margin: 10px;
+}

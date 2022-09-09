@@ -1,7 +1,72 @@
 /*----- constants -----*/
 
-const alphabetLtrs = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+const alphabetLtrs = [
+	'A',
+	'B',
+	'C',
+	'D',
+	'E',
+	'F',
+	'G',
+	'H',
+	'I',
+	'J',
+	'K',
+	'L',
+	'M',
+	'N',
+	'O',
+	'P',
+	'Q',
+	'R',
+	'S',
+	'T',
+	'U',
+	'V',
+	'W',
+	'X',
+	'Y',
+	'Z',
+];
 
+const wordArr = ['mountain', 'river', 'evergreen', 'trout', 'campervan'];
+
+// const wordArr = [
+//     {
+//         word: 'mountain',
+//         hint: 'climb the ********',
+//     },
+//     {
+//         word: 'river',
+//         hint: 'water running between mountains'
+//     },
+//     {
+//         word: 'evergreen',
+//         hint: 'tree that stays green year-round'
+//     },
+//     {   word: 'trout',
+//         hint: 'fish that lives in cold rivers'
+//     },
+//     {   word: 'campervan',
+//         hint: '#vanlife'
+//     }];
+
+const userInput = document.querySelector('.input-boxes');
+const playAgainBtn = document.querySelector('.play-again-button');
+
+function randWordGenerater() {
+	let randWord = wordArr[Math.floor(Math.random() * wordArr.length)];
+	console.log(randWord);
+
+	let changeHTML = '';
+	for (let i = 0; i < randWord.length; i++) {
+		changeHTML += `<input type="text" disabled>`;
+	}
+	userInput.innerHTML = changeHTML;
+}
+randWordGenerater();
+
+playAgainBtn.addEventListener('click', randWordGenerater);
 
 /*----- app's state (variables) -----*/
 
@@ -11,7 +76,26 @@ const alphabetLtrs = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'
 
 /*----- functions -----*/
 
-//// Game Setup //// 
+/////// State's List from FSM Excerise /////////
+
+//State#1: Welcome with Start Game Button
+// transition: Start/Begin Button is Clicked
+//State#2: no ship image, random word selected, hidden boxes appear, instructions appear, keyboard is full abled
+// transition(letter guess correctly)
+//State#2a: clicked keyboard letter disabled, letter added to hidden word
+// transition(letter guess wrong)
+//State#2b: clicked keyboard letter disabled, message displays wrong letter selected
+// State#3: Game In Play
+// transition(all letters guessed correct)
+//State#4a: Reveal portion of ship, next round
+//transition: all words guessed correctly
+//State#5: ship build complete, ship flies off, new game button
+//transition(new game button clicked > return to State#1: Welcome Start Game)
+//transition(10 letters guessed wrong)
+//State#4b: Game Over - Play Again Button
+//transition(play again button click > return to State#1 Welcome Start Game)
+
+//// Game Setup ////
 
 // function playGame() {
 // 	class game {
@@ -26,7 +110,7 @@ const alphabetLtrs = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'
 // const round1 = function () {
 //     return this.word
 // }
- 
+
 // const firstWord = new game.words('mountain');
 
 // console.log(firstWord);
@@ -109,24 +193,4 @@ const alphabetLtrs = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'
 
 // //
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////// Console Spaceman /////////////////////
-
