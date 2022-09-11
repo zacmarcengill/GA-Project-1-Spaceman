@@ -50,8 +50,7 @@ const inputBoxes = document.querySelector('.input-boxes');
 const playAgainBtn = document.querySelector('.play-again-button');
 const hint = document.querySelector('.hint');
 const alphaBtnInput = document.querySelector('.button');
-let wrongLetter = document.getElementById('wrong');
-// let word;
+let usedLetters = document.getElementById('.used-boxes');
 
 /////// logs on screen keyboard Letters when clicked //////
 const keyboard = document.getElementById('keyboard');
@@ -80,6 +79,8 @@ const keyboard = document.getElementById('keyboard');
 /////// Generates random word from wordArr above ///////////
 
 function randWordGenerater() {
+	// line below not working to reset disabled buttons on game start
+	// keyboard.disabled = false;
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
 	let word = randWordHint.word;
 	// console.log(word);
@@ -98,17 +99,17 @@ function randWordGenerater() {
 			for (let i = 0; i < word.length; i++) {
 				if (word[i] === buttonValue) {
 					inputBoxes.querySelectorAll('input')[i].value = buttonValue;
-				} else {
-					wrongLetter.innerText = 'Wrong';
 				}
 			}
-			console.log(e.target.innerHTML);
-			// console.log(word);
+		} else {
+			//
 		}
+		console.log(e.target.innerHTML);
+		// console.log(word);
 	});
 }
 
-randWordGenerater();
+// randWordGenerater();
 
 // NEEDS WORK!!!! ///////Game Function - Plays Game ////////
 
