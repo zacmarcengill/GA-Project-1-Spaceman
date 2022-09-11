@@ -31,85 +31,86 @@ const alphabetLtrs = [
 
 const wordArr = [
 	{
-		word: 'mountain',
+		word: 'MOUNTAIN',
 		hint: 'climb the ********',
 	},
 	{
-		word: 'river',
+		word: 'RIVER',
 		hint: 'water running between mountains',
 	},
 	{
-		word: 'evergreen',
+		word: 'EVERGREEN',
 		hint: 'tree that stays green year-round',
 	},
-	{ word: 'trout', hint: 'fish that lives in cold rivers' },
-	{ word: 'campervan', hint: '#vanlife' },
+	{ word: 'TROUT', hint: 'fish that lives in cold rivers' },
+	{ word: 'CAMPERVAN', hint: '#vanlife' },
 ];
 
-const userInput = document.querySelector('.input-boxes');
+const inputBoxes = document.querySelector('.input-boxes');
 const playAgainBtn = document.querySelector('.play-again-button');
 const hint = document.querySelector('.hint');
 const alphaBtnInput = document.querySelector('.button');
-const typingInput = document.querySelector('.typing-input');
-let word;
+let wrongLetter = document.getElementById('wrong');
+// let word;
 
 /////// logs on screen keyboard Letters when clicked //////
 const keyboard = document.getElementById('keyboard');
 
-function keyClick() {
-	keyboard.addEventListener('click', (e) => {
-		const buttonValue = e.target.innerHTML;
-		if (word.includes(buttonValue)) {
-			console.log('correct');
-		} else {
-			console.log('NOT correct');
-		}
-		console.log(e.target.innerHTML);
-	});
-}
-keyClick();
+// function keyClick() {
+// 	keyboard.addEventListener('click', (e) => {
+// 		const buttonValue = e.target.innerHTML;
+// 		if (word.includes(buttonValue)) {
+// 			console.log(
+// 				'You selected ' + buttonValue + '. This letter is part of ' + word + '.'
+// 			);
+// 		} else {
+// 			console.log(
+// 				'You selected ' +
+// 					buttonValue +
+// 					'. This letter is NOT part of ' +
+// 					word +
+// 					'.'
+// 			);
+// 		}
+// 		console.log(e.target.innerHTML);
+// 	});
+// }
+// keyClick();
 
 /////// Generates random word from wordArr above ///////////
 
 function randWordGenerater() {
-	//select random word and hint from array
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
-
-	//new variable for random word selected
-	word = randWordHint.word;
-
-	// console.log("Print > Word: " + randWordHint.word + ' - Hint: ' + randWordHint.hint);
+	let word = randWordHint.word;
 	// console.log(word);
 
 	let changeHTML = '';
 	for (let i = 0; i < word.length; i++) {
 		changeHTML += `<input type="text" disabled>`;
 	}
-	userInput.innerHTML = changeHTML;
+	inputBoxes.innerHTML = changeHTML;
 	//creates hint below hidden word
 	hint.innerText = 'Hint: ' + randWordHint.hint;
+
+	keyboard.addEventListener('click', (e) => {
+		const buttonValue = e.target.innerHTML;
+		if (word.includes(buttonValue)) {
+			for (let i = 0; i < word.length; i++) {
+				if (word[i] === buttonValue) {
+					inputBoxes.querySelectorAll('input')[i].value = buttonValue;
+				} else {
+					wrongLetter.innerText = 'Wrong';
+				}
+			}
+			console.log(e.target.innerHTML);
+			// console.log(word);
+		}
+	});
 }
-// randWordGenerater();
+
+randWordGenerater();
 
 // NEEDS WORK!!!! ///////Game Function - Plays Game ////////
-
-//Reference: https://stackoverflow.com/questions/1721602/regex-for-matching-a-z-a-z-0-9-and for matching upper case letters only.
-
-// function playGame(e) {
-// 	let key = e.target.value;
-// 	if (key.match(/^[A-Z]+$/)) {
-// 		console.log(key);
-// 	}
-// 	if (word.includes(key)) {
-// 		for (let i = 0; i < word.length; i++) {
-// 			if (word[i] === key) {
-// 				userInput.querySelectorAll('userInput');
-// 			}
-// 		}
-// 	} else {
-// 		console.log('letter not found');
-// 	}
-// }
 
 function playGame(e) {
 	let key = e.target.innerHTML;
@@ -146,25 +147,6 @@ playAgainBtn.addEventListener('click', randWordGenerater);
 //State#4b: Game Over - Play Again Button
 //transition(play again button click > return to State#1 Welcome Start Game)
 
-//// Game Setup ////
-
-// function playGame() {
-// 	class game {
-// 		words = 'DEFAULT';
-
-// 		constructor(words) {
-// 			this.words = words;
-// 		}
-// 	}
-// }
-
-// const round1 = function () {
-//     return this.word
-// }
-
-// const firstWord = new game.words('mountain');
-
-// console.log(firstWord);
 ////// User Stories  ///////
 
 //// MVP#1: Game Welcome ////
@@ -201,47 +183,3 @@ playAgainBtn.addEventListener('click', randWordGenerater);
 // Create Multiple levels of greater complexity to build other ships in further rounds of game
 
 // create animation of ship flying away when round is won and ship is built.
-
-//////// Psuedocode ///////////
-
-// // function for welcome() ... includes needed info and instructions.
-
-// function to build ship as word is completed or guessed right
-
-// function to hide letters of word and toggle them on when guess right
-
-// function for guessed letter input box with guess button
-
-// function to add guessed letters to display box
-
-// class with words to guess in array
-
-// class spaceShip
-
-// class hiddenWord or hiddenLetters
-
-// class guessedLetter
-
-// function for playGame
-// class hiddenWords
-//constructor (array, length)
-
-// const gameSettings
-// playerName:
-// numOfWordRounds: 5
-// numOfShipParts = NumOfWordRounds
-
-// let player =
-
-// // function for each word to be hidden/guessed {
-//     //let firstWordArr = [B, E, L, I, E, V, E]
-//     // const letter = document.getElementByID("firstWordFirstLetter");
-//     // if (x.style.display === "none") {
-//         x.style.display = "block";
-//     } else {
-//         x.style.display = "none";
-//     }
-
-// //
-
-//////////////////////// Console Spaceman /////////////////////
