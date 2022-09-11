@@ -25,14 +25,14 @@ h1 {
 }
 
 .spaceship {
-	background-color: silver;
+	/* background-color: silver;
 	border-radius: 100px;
 	width: 200px;
-	height: 200px;
+	height: 200px;*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: auto;
+	margin: auto; 
 }
 
 .sceneGrass {

@@ -51,17 +51,36 @@ const playAgainBtn = document.querySelector('.play-again-button');
 const hint = document.querySelector('.hint');
 const alphaBtnInput = document.querySelector('.button');
 const typingInput = document.querySelector('.typing-input');
+let word;
+
+/////// logs on screen keyboard Letters when clicked //////
+const keyboard = document.getElementById('keyboard');
+
+function keyClick() {
+	keyboard.addEventListener('click', (e) => {
+		const buttonValue = e.target.innerHTML;
+		if (word.includes(buttonValue)) {
+			console.log('correct');
+		} else {
+			console.log('NOT correct');
+		}
+		console.log(e.target.innerHTML);
+	});
+}
+keyClick();
+
+/////// Generates random word from wordArr above ///////////
 
 function randWordGenerater() {
 	//select random word and hint from array
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
 
 	//new variable for random word selected
-	let word = randWordHint.word;
+	word = randWordHint.word;
 
 	// console.log("Print > Word: " + randWordHint.word + ' - Hint: ' + randWordHint.hint);
+	// console.log(word);
 
-	//
 	let changeHTML = '';
 	for (let i = 0; i < word.length; i++) {
 		changeHTML += `<input type="text" disabled>`;
@@ -70,41 +89,35 @@ function randWordGenerater() {
 	//creates hint below hidden word
 	hint.innerText = 'Hint: ' + randWordHint.hint;
 }
-randWordGenerater();
+// randWordGenerater();
 
-function initGame(e) {
-	let key = e.target.value;
-	console.log(key);
+// NEEDS WORK!!!! ///////Game Function - Plays Game ////////
+
+//Reference: https://stackoverflow.com/questions/1721602/regex-for-matching-a-z-a-z-0-9-and for matching upper case letters only.
+
+// function playGame(e) {
+// 	let key = e.target.value;
+// 	if (key.match(/^[A-Z]+$/)) {
+// 		console.log(key);
+// 	}
+// 	if (word.includes(key)) {
+// 		for (let i = 0; i < word.length; i++) {
+// 			if (word[i] === key) {
+// 				userInput.querySelectorAll('userInput');
+// 			}
+// 		}
+// 	} else {
+// 		console.log('letter not found');
+// 	}
+// }
+
+function playGame(e) {
+	let key = e.target.innerHTML;
 }
+
+///// Some Event Listeners ///////
 
 playAgainBtn.addEventListener('click', randWordGenerater);
-typingInput.addEventListener('input', initGame);
-document.addEventListener('keydonw', () => typingInput.focus());
-
-let button = document.getElementsByClassName('.button');
-
-function guessLetter() {
-	let button = document.getElementsByClassName('.button');
-	button.addEventListener('click', keyClick);
-	////event listener that returns button letter (innerHTML) for clicked alphabet buttons
-}
-
-function evaluateHiddenWord() {
-	////checks the hidden word for guessed letters
-	let hiddenWordLetters = `<input type="text" disabled>`;
-}
-
-// function guessLetters() {
-// 	let guess = document.querySelectorAll('.button');
-//     let userInput = document.querySelectorAll('.input-boxes');
-
-//     if (userInput === guess) {
-//         console.log("correct")
-//     } else {
-//         console.log("wrong")
-//     }
-// }
-// guessLetters(A)
 
 /*----- app's state (variables) -----*/
 
