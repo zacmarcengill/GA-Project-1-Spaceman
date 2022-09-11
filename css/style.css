@@ -32,7 +32,7 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: auto; 
+	margin: auto;
 }
 
 .sceneGrass {
@@ -62,9 +62,8 @@ input {
 	text-align: center;
 }
 
-.keyboard-container {
+.keyboard {
 	background-color: white;
-	line-height: 50px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -81,9 +80,9 @@ input {
 	flex-wrap: wrap;
 }
 
-.input input{
-	height: 50px;
-	width: 50px;
+.input-boxes input {
+	height: 10px;
+	width: 10px;
 	padding: 10px;
 	margin: 10px;
 }
