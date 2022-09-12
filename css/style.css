@@ -60,6 +60,7 @@ footer {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: medium;
 	text-align: center;
+	line-height: 5vh;
 }
 
 input {
@@ -73,6 +74,7 @@ input {
 	justify-content: space-between;
 	flex-wrap: wrap;
 	align-items: center;
+	line-height: 5vh;
 }
 
 .hidden-word-container .input-boxes {
@@ -89,4 +91,24 @@ input {
 	width: 10px;
 	padding: 10px;
 	margin: 10px;
+}
+
+.hint {
+	background-color: white;
+	line-height: 3vh;
+}
+
+.message {
+	background-color: white;
+	line-height: 5vh;
+}
+
+#play-again-container {
+	background-color: white;
+	line-height: 5vh;
+}
+
+#guesses-left-container {
+	background-color: white;
+	line-height: 5vh;
 }

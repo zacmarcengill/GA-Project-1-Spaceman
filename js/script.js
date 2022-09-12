@@ -49,12 +49,25 @@ const wordArr = [
 const inputBoxes = document.querySelector('.input-boxes');
 const playAgainBtn = document.querySelector('.play-again-button');
 const hint = document.querySelector('.hint');
+const guessesLeft = document.querySelector('.guesses-left');
 let message = document.querySelector('.message');
 let alphaBtnInput = document.querySelectorAll('button');
 let usedLetters = document.querySelector('.used-boxes');
 const keyboard = document.getElementById('keyboard');
 
-/////// logs on screen keyboard Letters when clicked //////
+///Try to Create Buttons from Javascript///
+// let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+// for (const letter of alphabet) {
+// 	let btn = document.createElement('button');
+// 	btn.innerHTML = letter;
+// 	btn.onclick = function (e) {
+// 		letterWasClicked(letter, e.target.innerHTML);
+// 	};
+// 	document.body.appendChild(btn);
+// }
+// ;
+///Try to Create Buttons from Javascript///
 
 /*----- app's state (variables) -----*/
 
@@ -71,7 +84,8 @@ function playGame() {
 	// line below not working to reset alpha buttons when generating new works (works on A only)
 	alphaBtnInput.disabled = false;
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
-	let word = randWordHint.word;
+	word = randWordHint.word;
+	maxGuesses = 8;
 	// console.log(word);
 
 	let changeHTML = '';
@@ -81,6 +95,7 @@ function playGame() {
 	inputBoxes.innerHTML = changeHTML;
 	//creates hint below hidden word
 	hint.innerText = 'Hint: ' + randWordHint.hint;
+	guessesLeft.innerHTML = 'You will have ' + maxGuesses + ' guesses per word.';
 
 	message.innerText =
 		'Select letters from below to guess the hidden word. You have 8 guesses total.';
@@ -89,12 +104,16 @@ function playGame() {
 		const buttonValue = e.target.innerHTML;
 		if (word.includes(buttonValue)) {
 			for (let i = 0; i < word.length; i++) {
+				//
 				if (word[i] === buttonValue) {
 					inputBoxes.querySelectorAll('input')[i].value = buttonValue;
 					message.innerText = 'Letter Correct!';
+				} else {
 				}
 			}
 		} else {
+			maxGuesses--;
+			guessesLeft.innerText = 'You have ' + maxGuesses + ' guesses left.';
 			message.innerText = 'Wrong Letter.';
 		}
 	});
