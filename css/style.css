@@ -1,5 +1,5 @@
 header {
-	background-color: skyblue;
+	background-color: white;
 	height: px;
 	padding: 30px;
 	display: flex;
@@ -12,8 +12,15 @@ h1 {
 	align-content: center;
 }
 
+h2 {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	background-color: white;
+	font-size: large;
+	align-content: center;
+}
+
 .sun {
-	background-color: yellow;
+	background-color: white;
 	height: 100px;
 	width: 100px;
 	border: 1px solid;
@@ -25,34 +32,31 @@ h1 {
 }
 
 .spaceship {
-	/* background-color: silver;
-	border-radius: 100px;
-	width: 200px;
-	height: 200px;*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: auto; 
+	margin: 5vh;
+	margin-bottom: ;
 }
 
 .sceneGrass {
-	background-color: greenyellow;
+	background-color: white;
 	height: 400px;
 	text-align: center;
 }
 
 .inputArea {
-	background-color: skyblue;
+	background-color: white;
 	text-align: center;
 	margin: auto;
 }
 
 body {
-	background-color: skyblue;
+	background-color: white;
 }
 
 footer {
-	background-color: gray;
+	background-color: white;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: medium;
 	text-align: center;
@@ -80,7 +84,7 @@ input {
 	flex-wrap: wrap;
 }
 
-.input-boxes input{
+.input-boxes input {
 	height: 10px;
 	width: 10px;
 	padding: 10px;

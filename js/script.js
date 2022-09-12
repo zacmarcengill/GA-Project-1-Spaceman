@@ -49,8 +49,9 @@ const wordArr = [
 const inputBoxes = document.querySelector('.input-boxes');
 const playAgainBtn = document.querySelector('.play-again-button');
 const hint = document.querySelector('.hint');
-let alphaBtnInput = document.querySelector('button');
-let usedLetters = document.getElementById('.used-boxes');
+let message = document.querySelector('.message');
+let alphaBtnInput = document.querySelectorAll('button');
+let usedLetters = document.querySelector('.used-boxes');
 const keyboard = document.getElementById('keyboard');
 
 /////// logs on screen keyboard Letters when clicked //////
@@ -67,7 +68,7 @@ playAgainBtn.addEventListener('click', playGame);
 
 /////// Generates random word from wordArr above ///////////
 function playGame() {
-	// line below not working to reset alpha buttons when generating new works
+	// line below not working to reset alpha buttons when generating new works (works on A only)
 	alphaBtnInput.disabled = false;
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
 	let word = randWordHint.word;
@@ -81,22 +82,24 @@ function playGame() {
 	//creates hint below hidden word
 	hint.innerText = 'Hint: ' + randWordHint.hint;
 
+	message.innerText =
+		'Select letters from below to guess the hidden word. You have 8 guesses total.';
+
 	keyboard.addEventListener('click', (e) => {
 		const buttonValue = e.target.innerHTML;
 		if (word.includes(buttonValue)) {
 			for (let i = 0; i < word.length; i++) {
 				if (word[i] === buttonValue) {
 					inputBoxes.querySelectorAll('input')[i].value = buttonValue;
+					message.innerText = 'Letter Correct!';
 				}
 			}
 		} else {
-			//
+			message.innerText = 'Wrong Letter.';
 		}
-		console.log(e.target.innerHTML);
-		// console.log(word);
 	});
 }
-// playGame();
+playGame();
 
 //////////Things That Don't Work//////
 
