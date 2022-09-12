@@ -95,10 +95,9 @@ function playGame() {
 	inputBoxes.innerHTML = changeHTML;
 	//creates hint below hidden word
 	hint.innerText = 'Hint: ' + randWordHint.hint;
-	guessesLeft.innerHTML = 'You will have ' + maxGuesses + ' guesses per word.';
+	guessesLeft.innerHTML = 'Guess Left: ' + maxGuesses;
 
-	message.innerText =
-		'Select letters from below to guess the hidden word. You have 8 guesses total.';
+	message.innerText = 'Select letters from below to guess the hidden word.';
 
 	keyboard.addEventListener('click', (e) => {
 		const buttonValue = e.target.innerHTML;
@@ -113,8 +112,13 @@ function playGame() {
 			}
 		} else {
 			maxGuesses--;
-			guessesLeft.innerText = 'You have ' + maxGuesses + ' guesses left.';
+			guessesLeft.innerText = 'Guess Left: ' + maxGuesses;
 			message.innerText = 'Wrong Letter.';
+
+			if (maxGuesses <= 0) {
+				message.innerText = 'Game Over!';
+				guessesLeft.innerText = 'Click "Generate Word" to play again.';
+			}
 		}
 	});
 }
