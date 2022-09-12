@@ -55,7 +55,7 @@ let alphaBtnInput = document.querySelectorAll('button');
 let usedLetters = document.querySelector('.used-boxes');
 const keyboard = document.getElementById('keyboard');
 
-///Try to Create Buttons from Javascript///
+////Try to Create Buttons from Javascript////
 // let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 // for (const letter of alphabet) {
@@ -66,7 +66,6 @@ const keyboard = document.getElementById('keyboard');
 // 	};
 // 	document.body.appendChild(btn);
 // }
-// ;
 ///Try to Create Buttons from Javascript///
 
 /*----- app's state (variables) -----*/
@@ -79,40 +78,60 @@ playAgainBtn.addEventListener('click', playGame);
 
 /*----- functions -----*/
 
-/////// Generates random word from wordArr above ///////////
+///function that disable = false
+
 function playGame() {
-	// line below not working to reset alpha buttons when generating new works (works on A only)
-	alphaBtnInput.disabled = false;
+	alphaBtnInput.forEach(function (element) {
+		element.disabled = false;
+	});
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
 	word = randWordHint.word;
 	maxGuesses = 8;
-	// console.log(word);
 
-	let changeHTML = '';
+	const guessLtrArr = [];
+
+	//Creates Empty Input Boxes for Hidden Word//
+	let createBoxesForHiddenWord = '';
 	for (let i = 0; i < word.length; i++) {
-		changeHTML += `<input type="text" disabled>`;
+		createBoxesForHiddenWord += `<input type="text" value='' disabled>`;
 	}
-	inputBoxes.innerHTML = changeHTML;
-	//creates hint below hidden word
+
+	// const emptyBoxes = document.querySelector('hidden-word-container');
+
+	// console.log(word.split(''));
+	// console.log(inputBoxes.value);
+
+	//function check for empty input boxes...if any box is equal to empty string..game goes on.
+
+	//when letter clicked, create string from input boxes then iterate through input box string, checking for empty box strings. If no empty strings game is won.
+
+	inputBoxes.innerHTML = createBoxesForHiddenWord;
+
 	hint.innerText = 'Hint: ' + randWordHint.hint;
-	guessesLeft.innerHTML = 'Guess Left: ' + maxGuesses;
+
+	guessesLeft.innerHTML = 'Guesses Left: ' + maxGuesses;
 
 	message.innerText = 'Select letters from below to guess the hidden word.';
 
 	keyboard.addEventListener('click', (e) => {
 		const buttonValue = e.target.innerHTML;
+
 		if (word.includes(buttonValue)) {
 			for (let i = 0; i < word.length; i++) {
-				//
 				if (word[i] === buttonValue) {
 					inputBoxes.querySelectorAll('input')[i].value = buttonValue;
-					message.innerText = 'Letter Correct!';
-				} else {
+					message.innerText =
+						'You selected ' + buttonValue + '. Letter Correct!';
+					guessLtrArr.push(buttonValue);
+					console.log(guessLtrArr);
+					if (word.length === guessLtrArr.length) {
+						message.innerText = 'Word guessed! You won!';
+					}
 				}
 			}
 		} else {
 			maxGuesses--;
-			guessesLeft.innerText = 'Guess Left: ' + maxGuesses;
+			guessesLeft.innerText = 'Guesses Left: ' + maxGuesses;
 			message.innerText = 'Wrong Letter.';
 
 			if (maxGuesses <= 0) {
@@ -125,12 +144,6 @@ function playGame() {
 playGame();
 
 //////////Things That Don't Work//////
-
-// - Keyboard Buttons Undisable After "Generate Word" button is pressed.
-
-// - Needs letter guess limit to loose round.
-
-// - Needs messages like "Correct Letter", "Wrong Letter", "You Guess the Word and Built a Part of the Ship", "You Won the Round and Completed the Ship", etc.
 
 // - Make more responsive for iphone to desktop with @media.
 

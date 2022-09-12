@@ -31,7 +31,18 @@ h2 {
 	justify-content: space-evenly;
 }
 
-.spaceship {
+.spaceship-container {
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5vh;
+	margin-bottom: ;
+}
+
+#ship-cover {
+	z-index: 0;
+	background-color: red;
 	display: flex;
 	justify-content: center;
 	align-items: center;
