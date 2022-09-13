@@ -1,6 +1,6 @@
 # Zac's Spaceman Game
 
-! [App Screenshot](./Screen%20Shot%202022-09-13%20at%2012.27.42%20PM.png)
+[App Screenshot](./Screen%20Shot%202022-09-13%20at%2012.27.42%20PM.png)
 
 ## Technologies Used:
 
@@ -26,7 +26,7 @@ Find the "About" section on this repo and click the link. This will take you to 
 
 ## Wireframe:
 
-! [App Wireframe](/Screen%20Shot%202022-09-13%20at%2012.34.03%20PM.png)
+[App Wireframe](/Screen%20Shot%202022-09-13%20at%2012.34.03%20PM.png)
 
 ## Unsolved Problems:
 
