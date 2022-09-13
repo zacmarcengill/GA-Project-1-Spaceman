@@ -1,11 +1,3 @@
-header {
-	background-color: white;
-	height: px;
-	padding: 30px;
-	display: flex;
-	justify-content: center;
-}
-
 body {
 	background-color: white;
 }
@@ -14,6 +6,11 @@ h1 {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: xxx-large;
 	align-content: center;
+	background-color: white;
+	height: px;
+	padding: 30px;
+	display: flex;
+	justify-content: center;
 }
 
 .spaceship-container {
@@ -38,6 +35,7 @@ h1 {
 h2 {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background-color: white;
+	line-height: 5vh;
 	font-size: large;
 	align-content: center;
 	display: flex;
@@ -62,13 +60,17 @@ h2 {
 }
 
 .hint {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-style: italic;
 	background-color: white;
-	line-height: 3vh;
+	line-height: 5vh;
 	display: flex;
 	justify-content: center;
 }
 
 .message {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: x-large;
 	background-color: white;
 	line-height: 5vh;
 	display: flex;
@@ -76,6 +78,7 @@ h2 {
 }
 
 .guesses-left {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background-color: white;
 	line-height: 5vh;
 	display: flex;
@@ -83,6 +86,7 @@ h2 {
 }
 
 .keyboard-container {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background-color: white;
 	line-height: 5vh;
 	margin: 0 auto;
@@ -93,6 +97,7 @@ h2 {
 }
 
 #play-again-container {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background-color: white;
 	line-height: 5vh;
 	display: flex;

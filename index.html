@@ -9,49 +9,28 @@
 		<title>Document</title>
 		<script defer src="/js/script.js"></script>
 	</head>
-	<header>
-		<h1>Spaceman</h1>
-	</header>
 	<body>
+		<h1>Spaceman</h1>
 		<div class="spaceship-container">
 			<picture>
-			<img class="spaceship" src="/png-transparent-four-white-rocket-illustrations-falcon-heavy-test-flight-falcon-9-spacex-dragon-rockets-animals-falcon-pen.png" 
-			alt="SpaceX Heavy Rocket"
-			height="300px">
-		</picture>
+				<img
+					class="spaceship"
+					src="/png-transparent-four-white-rocket-illustrations-falcon-heavy-test-flight-falcon-9-spacex-dragon-rockets-animals-falcon-pen.png"
+					alt="SpaceX Heavy Rocket"
+					height="300px"
+				/>
+			</picture>
 		</div>
 		<div class="ship-cover"></div>
-
-		<!-- <div class="inputArea"> -->
-			<!-- <div>
-				<label for="guessLetter">Guess Letter Here</label>
-			</div>
-			<div>
-				<input
-					type="text"
-					id="inputBox"
-					name="gLtr"
-					maxlength="1"
-					minlength="1"
-					title="Only Letters"
-					placeholder="Capitol Letters Only"
-					pattern="(?=.*[A-Z]).{1,}"
-				/>
-			</div>
-			<div>
-				<input type="submit" />
-			</div>
-		</div> -->
-
 		<div class="hidden-word">
 			<h2>Guess The Hidden Word</h2>
-			<div class="hidden-word-container" value="">
-				<div class="input-boxes" value=""></div>
+			<div class="hidden-word-container">
+				<div class="input-boxes"></div>
 				<p class="hint">Hint: <span></span></p>
 				<p class="message"><span></span></p>
 			</div>
 			<div id="guesses-left-container">
-				<p class="guesses-left">Guesses Left: </p>
+				<p class="guesses-left">Guesses Left:</p>
 			</div>
 		</div>
 		<div class="keyboard-container">
@@ -83,7 +62,6 @@
 				<button class="button" onclick="disabled=true">Y</button>
 				<button class="button" onclick="disabled=true">Z</button>
 			</div>
-			
 		</div>
 		<div id="play-again-container">
 			<button class="play-again-button">Generate Word</button>

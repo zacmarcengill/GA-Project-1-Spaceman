@@ -32,7 +32,7 @@ const alphabetLtrs = [
 const wordArr = [
 	{
 		word: 'MOUNTAIN',
-		hint: 'climb the ********',
+		hint: 'climb the  _ _ _ _ _ _ _ _',
 	},
 	{
 		word: 'RIVER',
