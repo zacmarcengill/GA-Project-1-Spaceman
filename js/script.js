@@ -99,8 +99,6 @@ function playGame() {
 					inputBoxes.querySelectorAll('input')[i].value = buttonValue;
 					message.innerText = 'Letter Correct!';
 					guessLtrArr.push(buttonValue);
-					console.log(word.length);
-					console.log(guessLtrArr);
 					if (word.length === guessLtrArr.length) {
 						message.innerText = 'Word guessed! You won!';
 						alphaBtnInput.forEach(function (element) {
