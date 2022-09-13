@@ -60,6 +60,7 @@ let message = document.querySelector('.message');
 let alphaBtnInput = document.querySelectorAll('.ltr');
 let usedLetters = document.querySelector('.used-boxes');
 const keyboard = document.getElementById('keyboard');
+let img = document.querySelector('.spaceship');
 
 /*----- event listeners -----*/
 
@@ -71,6 +72,8 @@ function playGame() {
 	alphaBtnInput.forEach(function (element) {
 		element.disabled = false;
 	});
+
+	img.src = '580b585b2edbce24c47b2d2b.png';
 
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
 	word = randWordHint.word;
@@ -105,6 +108,7 @@ function playGame() {
 						alphaBtnInput.forEach(function (element) {
 							element.disabled = true;
 						});
+						img.src = 'spacex-falcon-heavy-launch.gif';
 					}
 				}
 			}
@@ -119,6 +123,7 @@ function playGame() {
 				alphaBtnInput.forEach(function (element) {
 					element.disabled = true;
 				});
+				img.src = 'gif-slow-motion-flames-fire-explosion-of-spacex-rocket.gif';
 			}
 		}
 	});
