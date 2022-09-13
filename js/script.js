@@ -55,23 +55,6 @@ let alphaBtnInput = document.querySelectorAll('button');
 let usedLetters = document.querySelector('.used-boxes');
 const keyboard = document.getElementById('keyboard');
 
-////Try to Create Buttons from Javascript////
-// let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-
-// for (const letter of alphabet) {
-// 	let btn = document.createElement('button');
-// 	btn.innerHTML = letter;
-// 	btn.onclick = function (e) {
-// 		letterWasClicked(letter, e.target.innerHTML);
-// 	};
-// 	document.body.appendChild(btn);
-// }
-///Try to Create Buttons from Javascript///
-
-/*----- app's state (variables) -----*/
-
-/*----- cached element references -----*/
-
 /*----- event listeners -----*/
 
 playAgainBtn.addEventListener('click', playGame);
@@ -144,8 +127,6 @@ function playGame() {
 playGame();
 
 //////////Things That Don't Work//////
-
-// wrong letter selection = too many guesses taken away
 
 // - Make more responsive for iphone to desktop with @media.
 

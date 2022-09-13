@@ -6,33 +6,18 @@ header {
 	justify-content: center;
 }
 
+body {
+	background-color: white;
+}
+
 h1 {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: xxx-large;
 	align-content: center;
 }
 
-h2 {
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	background-color: white;
-	font-size: large;
-	align-content: center;
-}
-
-.sun {
-	background-color: white;
-	height: 100px;
-	width: 100px;
-	border: 1px solid;
-	border-radius: 100px;
-	margin: 50px 0px 0px 50px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-}
-
 .spaceship-container {
-	z-index: 1;
+	z-index: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -41,7 +26,7 @@ h2 {
 }
 
 #ship-cover {
-	z-index: 0;
+	z-index: auto;
 	background-color: red;
 	display: flex;
 	justify-content: center;
@@ -50,51 +35,13 @@ h2 {
 	margin-bottom: ;
 }
 
-.sceneGrass {
-	background-color: white;
-	height: 400px;
-	text-align: center;
-}
-
-.inputArea {
-	background-color: white;
-	text-align: center;
-	margin: auto;
-}
-
-body {
-	background-color: white;
-}
-
-footer {
-	background-color: white;
+h2 {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: medium;
-	text-align: center;
-	line-height: 5vh;
-}
-
-input {
-	text-align: center;
-}
-
-.keyboard {
 	background-color: white;
+	font-size: large;
+	align-content: center;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	align-items: center;
-	line-height: 5vh;
-}
-
-.hidden-word-container .input-boxes {
-	background-color: white;
-	line-height: 50px;
-	display: flex;
-	flex-direction: row;
 	justify-content: center;
-	flex-wrap: wrap;
 }
 
 .input-boxes input {
@@ -104,22 +51,58 @@ input {
 	margin: 10px;
 }
 
+.input-boxes {
+	background-color: white;
+	line-height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
 .hint {
 	background-color: white;
 	line-height: 3vh;
+	display: flex;
+	justify-content: center;
 }
 
 .message {
 	background-color: white;
 	line-height: 5vh;
+	display: flex;
+	justify-content: center;
+}
+
+.guesses-left {
+	background-color: white;
+	line-height: 5vh;
+	display: flex;
+	justify-content: center;
+}
+
+.keyboard-container {
+	background-color: white;
+	line-height: 5vh;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 #play-again-container {
 	background-color: white;
 	line-height: 5vh;
+	display: flex;
+	justify-content: center;
 }
 
-#guesses-left-container {
+footer {
 	background-color: white;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: medium;
+	text-align: center;
 	line-height: 5vh;
 }
