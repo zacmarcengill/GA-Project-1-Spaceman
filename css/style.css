@@ -7,7 +7,6 @@ h1 {
 	font-size: xxx-large;
 	align-content: center;
 	background-color: white;
-	height: px;
 	padding: 30px;
 	display: flex;
 	justify-content: center;
@@ -23,7 +22,6 @@ img {
 	justify-content: center;
 	align-items: center;
 	margin: 5vh;
-	margin-bottom: ;
 }
 
 #ship-cover {
@@ -33,7 +31,6 @@ img {
 	justify-content: center;
 	align-items: center;
 	margin: 5vh;
-	margin-bottom: ;
 }
 
 h2 {
