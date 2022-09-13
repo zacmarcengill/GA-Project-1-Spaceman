@@ -83,7 +83,7 @@ function playGame() {
 
 	guessesLeft.innerHTML = 'Guesses Left: ' + maxGuesses;
 
-	message.innerText = 'Select letters from below to guess the hidden word.';
+	message.innerText = 'Select letters to guess the hidden word.';
 
 	keyboard.addEventListener('click', (e) => {
 		const buttonValue = e.target.innerHTML;
