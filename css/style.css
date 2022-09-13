@@ -13,6 +13,10 @@ h1 {
 	justify-content: center;
 }
 
+img {
+	height: 300px;
+}
+
 .spaceship-container {
 	z-index: auto;
 	display: flex;
