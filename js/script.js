@@ -31,19 +31,25 @@ const alphabetLtrs = [
 
 const wordArr = [
 	{
-		word: 'MOUNTAIN',
-		hint: 'climb the  _ _ _ _ _ _ _ _',
+		word: 'STAR',
+		hint: 'luminous point in the night sky',
 	},
 	{
-		word: 'RIVER',
-		hint: 'water running between mountains',
+		word: 'GALAXY',
+		hint: 'billions of stars held together by gravitational attraction',
 	},
 	{
-		word: 'EVERGREEN',
-		hint: 'tree that stays green year-round',
+		word: 'ROCKET',
+		hint: 'projectile that takes personel and object into space',
 	},
-	{ word: 'TROUT', hint: 'fish that lives in cold rivers' },
-	{ word: 'CAMPERVAN', hint: '#vanlife' },
+	{
+		word: 'MOON',
+		hint: 'natural satellite of earth, visible by reflected light from sun',
+	},
+	{
+		word: 'SATELLITE',
+		hint: 'artificial body placed in orbit around the earth',
+	},
 ];
 
 const inputBoxes = document.querySelector('.input-boxes');
