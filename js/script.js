@@ -145,6 +145,8 @@ playGame();
 
 //////////Things That Don't Work//////
 
+// wrong letter selection = too many guesses taken away
+
 // - Make more responsive for iphone to desktop with @media.
 
 // - CSS: Hide Ship with div and reveal ship with correct words.
