@@ -40,7 +40,7 @@ const wordArr = [
 	},
 	{
 		word: 'ROCKET',
-		hint: 'projectile that takes personel and object into space',
+		hint: 'projectile that takes personnel and object into space',
 	},
 	{
 		word: 'MOON',
@@ -61,6 +61,12 @@ let alphaBtnInput = document.querySelectorAll('.ltr');
 let usedLetters = document.querySelector('.used-boxes');
 const keyboard = document.getElementById('keyboard');
 let img = document.querySelector('.spaceship');
+let guessLtrArr = [];
+
+/*----- logic -----*/
+
+initGame();
+playGame();
 
 /*----- functions -----*/
 
@@ -73,9 +79,9 @@ function playGame() {
 
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
 	word = randWordHint.word;
-	maxGuesses = 8;
+	maxGuesses = 5;
 
-	const guessLtrArr = [];
+	guessLtrArr = [];
 
 	let createBoxesForHiddenWord = '';
 	for (let i = 0; i < word.length; i++) {
@@ -89,7 +95,9 @@ function playGame() {
 	guessesLeft.innerHTML = 'Guesses Left: ' + maxGuesses;
 
 	message.innerText = 'Select letters to guess the hidden word.';
+}
 
+function initGame() {
 	keyboard.addEventListener('click', (e) => {
 		const buttonValue = e.target.innerHTML;
 
@@ -124,7 +132,6 @@ function playGame() {
 		}
 	});
 }
-playGame();
 
 /*----- event listeners -----*/
 

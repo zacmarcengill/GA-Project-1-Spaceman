@@ -30,4 +30,4 @@ Find the "About" section on this repo and click the link. This will take you to 
 
 ## Unsolved Problems:
 
-- App will log an array of correctly guess letters without clearing them when "Generate Word" is clicked (which is the intent). Need to discover why this array is not clearing upon generating each new word. This problem only allows for a few words to be guessed correctly without this bug resulting in a false win. This same problem also effects the accurate number of "Guesses Left" and will sometimes end the game prematurely.
+- None.
