@@ -62,24 +62,20 @@ let usedLetters = document.querySelector('.used-boxes');
 const keyboard = document.getElementById('keyboard');
 let img = document.querySelector('.spaceship');
 
-/*----- event listeners -----*/
-
-playAgainBtn.addEventListener('click', playGame);
-
 /*----- functions -----*/
 
 function playGame() {
+	const guessLtrArr = [];
+
 	alphaBtnInput.forEach(function (element) {
 		element.disabled = false;
 	});
 
-	img.src = '580b585b2edbce24c47b2d2b.png';
+	img.src = 'SpaceXHeavyRocket.png';
 
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
 	word = randWordHint.word;
 	maxGuesses = 8;
-
-	const guessLtrArr = [];
 
 	let createBoxesForHiddenWord = '';
 	for (let i = 0; i < word.length; i++) {
@@ -103,6 +99,8 @@ function playGame() {
 					inputBoxes.querySelectorAll('input')[i].value = buttonValue;
 					message.innerText = 'Letter Correct!';
 					guessLtrArr.push(buttonValue);
+					console.log(word.length);
+					console.log(guessLtrArr);
 					if (word.length === guessLtrArr.length) {
 						message.innerText = 'Word guessed! You won!';
 						alphaBtnInput.forEach(function (element) {
@@ -130,6 +128,6 @@ function playGame() {
 }
 playGame();
 
-//////////Things That Don't Work//////
+/*----- event listeners -----*/
 
-// - CSS: Hide Ship with div and reveal ship with correct words.
+playAgainBtn.addEventListener('click', playGame);
