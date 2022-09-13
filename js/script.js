@@ -65,17 +65,17 @@ let img = document.querySelector('.spaceship');
 /*----- functions -----*/
 
 function playGame() {
-	const guessLtrArr = [];
+	img.src = 'SpaceXHeavyRocket.png';
 
 	alphaBtnInput.forEach(function (element) {
 		element.disabled = false;
 	});
 
-	img.src = 'SpaceXHeavyRocket.png';
-
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
 	word = randWordHint.word;
 	maxGuesses = 8;
+
+	const guessLtrArr = [];
 
 	let createBoxesForHiddenWord = '';
 	for (let i = 0; i < word.length; i++) {
