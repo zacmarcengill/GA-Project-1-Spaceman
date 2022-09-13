@@ -57,7 +57,7 @@ const playAgainBtn = document.querySelector('.play-again-button');
 const hint = document.querySelector('.hint');
 const guessesLeft = document.querySelector('.guesses-left');
 let message = document.querySelector('.message');
-let alphaBtnInput = document.querySelectorAll('button');
+let alphaBtnInput = document.querySelectorAll('.ltr');
 let usedLetters = document.querySelector('.used-boxes');
 const keyboard = document.getElementById('keyboard');
 
@@ -102,6 +102,9 @@ function playGame() {
 					guessLtrArr.push(buttonValue);
 					if (word.length === guessLtrArr.length) {
 						message.innerText = 'Word guessed! You won!';
+						alphaBtnInput.forEach(function (element) {
+							element.disabled = true;
+						});
 					}
 				}
 			}
@@ -113,6 +116,9 @@ function playGame() {
 			if (maxGuesses <= 0) {
 				message.innerText = 'Game Over!';
 				guessesLeft.innerText = 'Click "Generate Word" to play again.';
+				alphaBtnInput.forEach(function (element) {
+					element.disabled = true;
+				});
 			}
 		}
 	});
@@ -121,8 +127,4 @@ playGame();
 
 //////////Things That Don't Work//////
 
-// - Make more responsive for iphone to desktop with @media.
-
 // - CSS: Hide Ship with div and reveal ship with correct words.
-
-// - Make it look purtty.
