@@ -26,7 +26,7 @@ Find the "About" section on this repo and click the link. This will take you to 
 
 ## Wireframe:
 
-[App Wireframe](/Screen%20Shot%202022-09-13%20at%2012.34.03%20PM.png)
+![Wireframe Planning Screenshot](https://user-images.githubusercontent.com/23196638/207168753-73d12d9a-0994-4638-8db8-1704e10fd4f6.png)
 
 ## Unsolved Problems:
 
