@@ -1,6 +1,6 @@
 # Zac's Spaceman Game
 
-[App Screenshot](./Screen%20Shot%202022-09-13%20at%2012.27.42%20PM.png)
+![Spaceman Game Screenshot](https://user-images.githubusercontent.com/23196638/207168574-7c13983b-69f4-4efd-8c26-38731e7fb47b.png)
 
 ## Technologies Used:
 
