@@ -47,7 +47,7 @@ const wordArr = [
 		hint: 'natural satellite of earth, visible by reflected light from sun',
 	},
 	{
-		word: 'SATELLITE',
+		word: 'SPACESHIP',
 		hint: 'artificial body placed in orbit around the earth',
 	},
 ];
@@ -77,35 +77,63 @@ function playGame() {
 		element.disabled = false;
 	});
 
+	// randomly selected word and hint
 	let randWordHint = wordArr[Math.floor(Math.random() * wordArr.length)];
+
+	// randomly selected word from randWordHint
 	word = randWordHint.word;
+
+	// number of wrong guesses per word
 	maxGuesses = 5;
 
+	// array of correctly guessed ltrs
 	guessLtrArr = [];
 
+	// sets state/value of input boxes to empty
 	let createBoxesForHiddenWord = '';
+
+	// creates input boxes for each word
 	for (let i = 0; i < word.length; i++) {
 		createBoxesForHiddenWord += `<input type="text" value='' disabled>`;
 	}
 
+	// captures html value of input boxes
 	inputBoxes.innerHTML = createBoxesForHiddenWord;
 
+	// creates hint message for current word
 	hint.innerText = 'Hint: ' + randWordHint.hint;
 
+	// creates updated guesses left message
 	guessesLeft.innerHTML = 'Guesses Left: ' + maxGuesses;
 
+	// instruction message
 	message.innerText = 'Select letters to guess the hidden word.';
 }
 
 function initGame() {
+
+	// adds event listener to each keyboard key
 	keyboard.addEventListener('click', (e) => {
+
+		// adds event target key value
 		const buttonValue = e.target.innerHTML;
 
+		// if clicked btn value is a ltr of the word...
 		if (word.includes(buttonValue)) {
+
+			// iterate through each ltr of the word...
 			for (let i = 0; i < word.length; i++) {
+
+				// if ltr of word equals btn value...
 				if (word[i] === buttonValue) {
+
+					// add btn value to input boxes
 					inputBoxes.querySelectorAll('input')[i].value = buttonValue;
+
+					// display 'correct guess' message
 					message.innerText = 'Letter Correct!';
+
+					// push guessed ltr to guessLtrArr
 					guessLtrArr.push(buttonValue);
 					if (word.length === guessLtrArr.length) {
 						message.innerText = 'Word guessed! You won!';
@@ -116,6 +144,7 @@ function initGame() {
 					}
 				}
 			}
+		// if clicked btn value is NOT a ltr of the word...
 		} else {
 			maxGuesses--;
 			guessesLeft.innerText = 'Guesses Left: ' + maxGuesses;
